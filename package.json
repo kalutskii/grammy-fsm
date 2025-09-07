@@ -1,0 +1,43 @@
+{
+  "name": "grammy-fsm",
+  "version": "0.0.1",
+  "author": "Ilya Kalutskii",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^24.0.15",
+    "prettier": "^3.6.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "description": "Extension for grammY framework that adds finite state machine (FSM) capabilities.",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "grammy": "^1.38.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalutskii/grammy-fsm.git"
+  },
+  "homepage": "https://github.com/kalutskii/grammy-fsm#readme",
+  "keywords": [
+    "grammy",
+    "fsm",
+    "telegram-bot",
+    "state-machine"
+  ]
+}
