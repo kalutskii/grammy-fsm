@@ -111,7 +111,7 @@ bot.on(
 
 ---
 
-### `FSM Keys`
+#### `FSM Keys`
 
 If you want to type your state keys, import from `fsm-keys.ts`:
 
