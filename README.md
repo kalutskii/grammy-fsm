@@ -13,9 +13,9 @@ Extension for the [grammY](https://grammy.dev) framework that adds **finite stat
 ### Installation
 
 ```bash
-npm install grammy-fsm
+bun add "https://github.com/kalutskii/grammy-fsm"
 # or
-pnpm add grammy-fsm
+npm add "https://github.com/kalutskii/grammy-fsm"
 ```
 
 ---
