@@ -39,7 +39,7 @@ const PROFILE_STATE = 'profile';
 
 // 3. Handlers
 bot.command('start', async (ctx) => {
-  await ctx.fsm.enter(AUTH_STATE);
+  await ctx.fsm.set(AUTH_STATE);
   await ctx.reply('Welcome! Please enter your password:');
 });
 
@@ -48,7 +48,7 @@ bot.on(
   'message:text',
   whenState(AUTH_STATE, async (ctx) => {
     if (ctx.message.text === 'secret') {
-      await ctx.fsm.enter(PROFILE_STATE);
+      await ctx.fsm.set(PROFILE_STATE);
       await ctx.reply('Authenticated! Now send me your profile info.');
     } else {
       await ctx.reply('Wrong password, try again.');
@@ -76,7 +76,7 @@ bot.start();
 Middleware that attaches `ctx.fsm` object to the context.
 
 - `ctx.fsm.state` → current state key (string or `null`)
-- `ctx.fsm.enter(stateKey: string)` → set new state
+- `ctx.fsm.set(stateKey: string)` → set new state
 - `ctx.fsm.leave()` → reset state
 
 ---
