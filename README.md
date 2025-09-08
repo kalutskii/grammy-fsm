@@ -108,15 +108,3 @@ bot.on(
   })
 );
 ```
-
----
-
-#### `FSM Keys`
-
-If you want to type your state keys, import from `fsm-keys.ts`:
-
-```ts
-import { FSMKeys } from 'grammy-fsm';
-
-type MyStates = typeof FSMKeys.Auth | typeof FSMKeys.Profile;
-```
