@@ -1,4 +1,4 @@
-import type { MiddlewareFn } from 'grammy';
+import type { Context, MiddlewareFn } from 'grammy';
 
 import type { FSMFlavor } from './state.api.types';
 import type { StateValue } from './state.types';
@@ -9,7 +9,7 @@ import type { StateValue } from './state.types';
  * @param values  - A state value or an array of values to match.
  * @param handler - The handler to execute on a matching state.
  */
-export function onState<C extends FSMFlavor>(
+export function onState<C extends Context & FSMFlavor>(
   values: StateValue[] | StateValue,
   handler: MiddlewareFn<C>
 ): MiddlewareFn<C> {

@@ -35,4 +35,4 @@ export type StateControllers = {
  * A context flavor that extends GrammY's Context type by adding
  * an `fsm` property of type StateControllers for FSM management.
  */
-export type FSMFlavor<C extends Context = Context> = C & { fsm: StateControllers };
+export type FSMFlavor = { fsm: StateControllers };
