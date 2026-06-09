@@ -12,8 +12,8 @@ import type { StateRecord } from './state.types';
 export type StateSession = { _state: StateRecord | null };
 
 /**
- * Context type that includes both session and FSM properties.
- * Used internally by stateMiddleware to ensure correct typings.
+ * Context type that includes both session and FSM properties;
+ * Internally used by stateMiddleware to ensure correct typings.
  */
 type StateMiddlewareContext = Context & SessionFlavor<StateSession> & FSMFlavor;
 
