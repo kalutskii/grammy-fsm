@@ -16,6 +16,8 @@ export function onState<C extends FSMFlavor>(
   return async (ctx, next) => {
     if (ctx.fsm?.is(...(Array.isArray(values) ? values : [values]))) {
       return handler(ctx, next);
-    } else return next();
+    } else {
+      return next();
+    }
   };
 }
