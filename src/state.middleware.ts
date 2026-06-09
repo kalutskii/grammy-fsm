@@ -12,16 +12,20 @@ import type { StateRecord } from './state.types';
 export type StateSession = { _state: StateRecord | null };
 
 /**
+ * Context type that includes both session and FSM properties.
+ * Used internally by stateMiddleware to ensure correct typings.
+ */
+type StateMiddlewareContext = Context & SessionFlavor<StateSession> & FSMFlavor;
+
+/**
  * Creates middleware that injects FSM controls into the context
  * via ctx.fsm; must be used after GrammY's session middleware.
  */
-export function stateMiddleware<C extends Context & SessionFlavor<StateSession>>(): MiddlewareFn<C & FSMFlavor> {
+export function stateMiddleware<C extends StateMiddlewareContext>(): MiddlewareFn<C> {
   return async (ctx, next) => {
     ctx.fsm = new StateController(
       () => ctx.session._state,
-      (state) => {
-        ctx.session._state = state;
-      }
+      (state) => (ctx.session._state = state)
     );
 
     await next();
