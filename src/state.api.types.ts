@@ -1,5 +1,3 @@
-import type { Context } from 'grammy';
-
 import type { StateData, StateRecord, StateValue } from './state.types';
 
 export type StateControllers = {
