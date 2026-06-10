@@ -1,6 +1,6 @@
 {
   "name": "@kalutskii/grammy-fsm",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Extension for grammY framework that adds finite state machine (FSM) capabilities.",
   "type": "module",
   "repository": {
